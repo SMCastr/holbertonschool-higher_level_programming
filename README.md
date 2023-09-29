@@ -1,10 +1,6 @@
 """
 Python - Hello, World
 
-Novice
-By: Sweety Castro
-Weight: 1
-
 Description:
 ------------
 This Python project contains a series of tasks to introduce you to fundamental concepts in Python programming.
@@ -51,20 +47,4 @@ Complete this source code to print "object-oriented programming with Python," fo
 
 Write a Python script that prints "The Zen of Python," by Tim Peters, followed by a new line. The script should be a maximum of 98 characters long.
 
-Requirements:
--------------
-- Allowed editors: vi, vim, emacs
-- All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.*)
-- All your files should end with a new line
-- The first line of all your files should be exactly #!/usr/bin/python3
-- A README.md file at the root of the repo, containing a description of the repository
-- A README.md file, at the root of the folder of this project, is mandatory
-- Your code should use pycodestyle (version 2.7.*)
-- All your files must be executable
-- The length of your files will be tested using wc
-
-Usage:
-------
-To run each Python script, use the following command:
-```bash
-./<script_name>.py
+By: Sweety Castro
