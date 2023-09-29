@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
-for letter in range(ord('a'), ord('z') + 1):
-    if letter != ord('e') and letter != ord('q'):
-        print(chr(letter), end="")
+for ascii in range(97, 123):
+    if ascii == 101 or ascii == 113:
+        continue
+    else:
+        print("{:c}".format(ascii), end="")
+        
