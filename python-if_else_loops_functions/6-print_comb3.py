@@ -7,4 +7,3 @@ for first in range(0, 10):
             print("{}{}, ".format(first, second), end="")
         else:
             continue
-        
