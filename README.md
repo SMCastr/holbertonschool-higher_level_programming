@@ -1,6 +1,10 @@
 """
 Python - Hello, World
 
+Novice
+By: Sweety Castro
+Weight: 1
+
 Description:
 ------------
 This Python project contains a series of tasks to introduce you to fundamental concepts in Python programming.
