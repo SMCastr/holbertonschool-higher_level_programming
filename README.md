@@ -1,9 +1,7 @@
 """
 Python - Hello, World
 
-Novice
 By: Sweety Castro
-Weight: 1
 
 Description:
 ------------
