@@ -1,5 +1,7 @@
 # Python Import & Modules Project
 
+by: Sweety
+
 This project consists of Python scripts that demonstrate various aspects of importing modules and using functions from external files. Each script addresses specific requirements and learning objectives related to Python programming.
 
 ## Project Files
