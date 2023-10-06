@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-def safe_print_integer(value):
-    try:
-        print("{:d}".format(value))
-    except ValueError:
-        return False
-    else:
-        return True
+
+def print_list_integer(my_list=[]):
+    for i in range(len(my_list)):
+        print("{:d}".format(my_list[i]))
