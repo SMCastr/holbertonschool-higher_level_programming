@@ -8,7 +8,3 @@ def print_matrix_integer(matrix=[[]]):
                 print()               
                 print("{:d}".format(num))
         if num % 2 == 0:
-            even.append(True)
-        else:
-            even.append(False)
-    return even
