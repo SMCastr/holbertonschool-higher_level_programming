@@ -15,8 +15,3 @@ This repository contains a collection of Python scripts that demonstrate various
 - [10-divisible_by_2.py](10-divisible_by_2.py): Finds all multiples of 2 in a list.
 - [11-delete_at.py](11-delete_at.py): Deletes the item at a specific position in a list.
 - [12-switch.py](12-switch.py): Switches the values of two variables, `a` and `b`.
-
-## Getting Started
-
-These scripts are written in Python 3. To run a script, use the following command:
-
