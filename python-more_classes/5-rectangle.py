@@ -1,20 +1,19 @@
 #!/usr/bin/python3
-
-
 class Rectangle:
+    """Rectangle class"""
     def __init__(self, width=0, height=0):
-        """Initialize a Rectangle with optional width and height."""
+        """Initialization method"""
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
-        """Retrieve the width of the Rectangle."""
+        """Getter for width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width of the Rectangle with error checking."""
+        """Setter for width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -23,12 +22,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Retrieve the height of the Rectangle."""
+        """Getter for height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height of the Rectangle with error checking."""
+        """Setter for height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -36,23 +35,32 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Calculate and return the area of the Rectangle."""
+        """Calculate area"""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Calculate and return the perimeter of the Rectangle."""
+        """Calculate perimeter"""
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return a string representation of the Rectangle using '#' characters."""
+        """String representation of the object"""
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join(['#' * self.__width] * self.__height)
 
     def __repr__(self):
-        """Return a string representation of the Rectangle object to recreate it."""
+        """String representation for recreation"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Print a message when an instance of Rectangle is deleted."""
+        """Destructor method"""
         print("Bye rectangle...")
+
+my_rectangle = Rectangle(2, 4)
+print(my_rectangle)
+
+# Try to change width and catch the exception
+try:
+    my_rectangle.width = 12
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name, e))
