@@ -52,10 +52,8 @@ class Rectangle:
         return "\n".join(['#' * self.__width] * self.__height)
 
     def __repr__(self):
-        """Return a string representation of the Rectangle object to recreate it."""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Print a message when an instance of Rectangle is deleted and decrement instance count."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
