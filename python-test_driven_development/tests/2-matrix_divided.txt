@@ -1,1 +1,6 @@
-#!/usr/bin/python3
+$ cat tests/2-matrix_divided.txt
+"""
+$ python3 -m doctest -v ./tests/2-matrix_divided.txt | tail -2
+5 passed and 0 failed.
+Test passed.
+"""

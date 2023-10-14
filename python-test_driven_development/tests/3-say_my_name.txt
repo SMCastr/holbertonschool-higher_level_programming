@@ -1,1 +1,6 @@
-#!/usr/bin/python3
+$ cat tests/3-say_my_name.txt
+"""
+$ python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
+5 passed and 0 failed.
+Test passed.
+"""
