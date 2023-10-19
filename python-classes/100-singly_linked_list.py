@@ -60,6 +60,7 @@ class Node:
         """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
+
         self.__next_node = value
 
 class SinglyLinkedList:
@@ -80,6 +81,7 @@ class SinglyLinkedList:
             value (int): The value to be inserted into the list.
         """
         new_node = Node(value)
+
         if self.head is None or value < self.head.data:
             new_node.next_node = self.head
             self.head = new_node
@@ -108,9 +110,14 @@ class SinglyLinkedList:
 if __name__ == "__main__":
     # Additional test cases
     n1 = Node(3)
+    print(n1.data)
+
     n2 = Node(-5)
+    print(n2.data)
+
     n3 = Node(4)
     n3.next_node = n2
+    print(n3.next_node.data)
 
     try:
         n4 = Node("4")
