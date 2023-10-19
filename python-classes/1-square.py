@@ -6,6 +6,7 @@ The Square class is used to represent a square. It has a private attribute
 size, which is initialized during object creation.
 """
 
+
 class Square:
     """
     The Square class represents a square.
