@@ -63,6 +63,7 @@ class Node:
 
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """
     Class SinglyLinkedList defines a singly linked list.
@@ -91,6 +92,7 @@ class SinglyLinkedList:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
+
 
     def __str__(self):
         """
