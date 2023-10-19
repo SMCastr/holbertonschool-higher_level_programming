@@ -14,20 +14,50 @@ class Node:
 
     @property
     def data(self):
+        """
+        Getter for the data attribute.
+
+        Returns:
+            int: The data stored in the node.
+        """
         return self.__data
 
     @data.setter
     def data(self, value):
+        """
+        Setter for the data attribute.
+
+        Args:
+            value (int): The data to be stored in the node.
+
+        Raises:
+            TypeError: If the value is not an integer.
+        """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
+        """
+        Getter for the next_node attribute.
+
+        Returns:
+            Node: The reference to the next node in the list.
+        """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
+        """
+        Setter for the next_node attribute.
+
+        Args:
+            value (Node): The reference to the next node.
+
+        Raises:
+            TypeError: If the value is not a Node object.
+        """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
@@ -45,6 +75,9 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """
         Inserts a new Node into the correct sorted position in the list (increasing order).
+
+        Args:
+            value (int): The value to be inserted into the list.
         """
         new_node = Node(value)
         if self.head is None or value < self.head.data:
@@ -58,6 +91,12 @@ class SinglyLinkedList:
             current.next_node = new_node
 
     def __str__(self):
+        """
+        Custom __str__ method to print the entire list.
+
+        Returns:
+            str: A string representation of the linked list.
+        """
         result = ""
         current = self.head
         while current:
