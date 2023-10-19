@@ -28,5 +28,26 @@ class TestMaxInteger(unittest.TestCase):
         # Test with a list of a large number of integers
         self.assertEqual(max_integer(list(range(1, 10001))), 10000)
 
+    def test_empty_list(self):
+        # Test an empty list
+        self.assertIsNone(max_integer([]))
+
+    def test_floats(self):
+        # Test with a list of floats
+        self.assertEqual(max_integer([1.1, 2.2, 3.3, 4.4]), 4.4)
+
+        # Test with mixed integers and floats
+        self.assertEqual(max_integer([1.1, 2, 3.3, 4]), 4)
+
+    def test_strings(self):
+        # Test with a list of strings
+        with self.assertRaises(TypeError):
+            max_integer(["a", "b", "c"])
+
+    def test_mixed_types(self):
+        # Test with a list of mixed data types
+        with self.assertRaises(TypeError):
+            max_integer([1, "2", 3, "4"])
+
 if __name__ == '__main__':
     unittest.main()
