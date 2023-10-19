@@ -10,9 +10,10 @@ def add_integer(a, b):
 
     Returns:
         int: The sum of a and b.
+
+    Raises:
+        TypeError: If either input is not an integer.
     """
     if not isinstance(a, int) or not isinstance(b, int):
         raise TypeError("Both inputs must be integers")
     return a + b
-
-# If you have more functions, add them here.

@@ -2,20 +2,60 @@
 
 >>> from file import add_integer
 
-# Test with positive integers
->>> add_integer(2, 3)
-5
+# Correct output - case: 1 + 2
+>>> add_integer(1, 2)
+3
 
-# Test with negative integers
->>> add_integer(-5, -7)
--12
+# Correct output - case: 1 + -2
+>>> add_integer(1, -2)
+-1
 
-# Test with a mix of positive and negative integers
->>> add_integer(10, -3)
-7
-
-# Test with non-integer inputs (should raise a TypeError)
->>> add_integer(2.5, 3.7)
+# Correct output - case: 1.4 + 2
+>>> add_integer(1.4, 2)
 Traceback (most recent call last):
   ...
 TypeError: Both inputs must be integers
+
+# Correct output - case: 1 + "2"
+>>> add_integer(1, "2")
+Traceback (most recent call last):
+  ...
+TypeError: Both inputs must be integers
+
+# Regular tests passed
+
+# Test present: integer casting
+>>> add_integer(int(1.5), int(-2.7))
+-1
+
+# Test present: check type
+>>> add_integer(1, "2")
+Traceback (most recent call last):
+  ...
+TypeError: Both inputs must be integers
+
+# Test present: regular addition
+>>> add_integer(5, 3)
+8
+
+# Test present: Float overflow
+>>> add_integer(999999999, 999999999)
+1999999998
+
+# Test present: cannot convert float NaN to integer
+>>> add_integer(float('nan'), 3)
+Traceback (most recent call last):
+  ...
+TypeError: Both inputs must be integers
+
+# Test present: missing one argument
+>>> add_integer(5)
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'b'
+
+# Test present: missing two arguments
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
