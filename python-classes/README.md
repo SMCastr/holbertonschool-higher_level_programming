@@ -51,4 +51,5 @@ my_square.my_print()
 
 ## Author
 
-This `Square` class and README.md were created by [MISS SWEETY CASTRO].
+This `Square` class and README.md 
+[MISS SWEETY CASTRO].
