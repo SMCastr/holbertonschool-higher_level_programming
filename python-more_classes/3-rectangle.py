@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A class Rectangle that defines a rectangle."""
+"""This module defines a class Rectangle that represents a rectangle."""
 
 
 class Rectangle:
@@ -43,7 +43,8 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        """Calculate and return the perimeter of the rectangle."""
+        """Calculate and return the perimeter of the
+        rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
@@ -59,3 +60,24 @@ class Rectangle:
         """Return a string representation of the
         rectangle that can recreate the object."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
+
+# Additional test cases
+
+my_rectangle = Rectangle(2, 4)
+print(str(my_rectangle))
+
+my_rectangle = Rectangle(2, 4)
+print(repr(my_rectangle))
+
+my_rectangle = Rectangle(2, 4)
+print(my_rectangle)
+
+my_rectangle = Rectangle(0, 4)
+print(str(my_rectangle))
+
+my_rectangle = Rectangle(2, 0)
+print(str(my_rectangle))
+
+my_rectangle = Rectangle(0, 0)
+print(str(my_rectangle))
