@@ -1,6 +1,23 @@
-$ cat tests/3-say_my_name.txt
-"""
-$ python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
-5 passed and 0 failed.
-Test passed.
-"""
+# Test for the say_my_name function
+
+>>> from say_my_name import say_my_name
+
+# Test with both first_name and last_name provided
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test with only first_name provided
+>>> say_my_name("Walter")
+My name is Walter 
+
+# Test with only first_name provided and last_name as an empty string
+>>> say_my_name("Bob")
+My name is Bob 
+
+# Test with non-string first_name (should raise a TypeError)
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string or last_name must be a string
+
+# Regular tests passed

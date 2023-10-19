@@ -1,4 +1,43 @@
-$ cat tests/4-print_square.txt
-"""
-$ python3 -m doctest -v ./tests/4-print_square.txt
-"""
+# Test for the print_square function
+
+>>> from print_square import print_square
+
+# Test with size 4
+>>> print_square(4)
+####
+####
+####
+####
+
+# Test with size 10
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# Test with size 0 (should raise a ValueError)
+>>> print_square(0)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+# Test with a negative size (should raise a ValueError)
+>>> print_square(-1)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+# Test with a float size (should raise a TypeError)
+>>> print_square(4.5)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+# Regular tests passed
