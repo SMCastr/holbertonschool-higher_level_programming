@@ -1,48 +1,4 @@
 #!/usr/bin/python3
-
-class Square:
-    def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
-
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        if type(value) is not int:
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
-    @property
-    def position(self):
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        if (
-            type(value) is not tuple
-            or len(value) != 2
-            or not all(isinstance(i, int) and i >= 0 for i in value)
-        ):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
-
-    def area(self):
-        return self.__size ** 2
-
-    def my_print(self):
-        if self.__size == 0:
-            print()
-        else:
-            for _ in range(self.__position[1]):
-                print()
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
-#!/usr/bin/python3
 """
 This module defines the Square class with size validation, area calculation,
 printing functionality, and position attribute.
@@ -153,15 +109,33 @@ class Square:
 
 
 if __name__ == "__main__":
-    my_square_1 = Square(3)
-    my_square_1.my_print()
+    my_square = Square(3, (1, 1))
+    print(my_square.size)
+    print(my_square.area())
+    print(my_square.position)
 
-    print("--")
+    my_square = Square(3, "Position")
+    my_square = Square(3, (1, ))
+    my_square = Square(3, (1, -3))
+    my_square = Square(3, (1, "3"))
 
-    my_square_2 = Square(3, (1, 1))
-    my_square_2.my_print()
+    my_square = Square(3)
+    my_square.my_print()
 
-    print("--")
+    my_square = Square(3, (0, 0))
+    my_square.my_print()
 
-    my_square_3 = Square(3, (3, 0))
-    my_square_3.my_print()
+    my_square = Square(3, (1, 0))
+    my_square.my_print()
+
+    my_square = Square(3, (0, 1))
+    my_square.my_print()
+
+    my_square = Square(3, (1, 1))
+    my_square.my_print()
+
+    my_square = Square(5, (3, 2))
+    my_square.my_print()
+
+    my_square = Square(0, (10, 3))
+    my_square.my_print()
