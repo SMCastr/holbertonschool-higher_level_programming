@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines the Square class with size validation, area calculation, and printing functionality.
+This module defines the Square class with
+size validation, area calculation, and printing functionality.
 """
 
 
