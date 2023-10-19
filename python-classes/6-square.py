@@ -98,6 +98,7 @@ class Square:
         Prints the square with the character # and uses the position attribute.
 
         If size is equal to 0, prints an empty line.
+        position should be use by using space - Don’t fill lines by spaces when position[1] > 0
         """
         if self.__size == 0:
             print()
