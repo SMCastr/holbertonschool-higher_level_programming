@@ -40,7 +40,7 @@ class Square:
 
 if __name__ == "__main__":
     my_square_1 = Square(3)
-    print("Area: {}".format(my_square_1.area()))
+    print("{}".format(my_square_1.area()))
 
     try:
         print(my_square_1.size)
@@ -53,4 +53,4 @@ if __name__ == "__main__":
         print(e)
 
     my_square_2 = Square(5)
-    print("Area: {}".format(my_square_2.area())
+    print("{}".format(my_square_2.area()))
