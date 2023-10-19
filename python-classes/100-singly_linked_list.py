@@ -5,8 +5,8 @@ class Node:
     Class Node defines a node of a singly linked list.
 
     Attributes:
-        data (int): The data stored in the node.
-        next_node (Node): The reference to the next node in the list.
+        __data (int): The data stored in the node.
+        __next_node (Node): The reference to the next node in the list.
     """
     def __init__(self, data, next_node=None):
         self.data = data
@@ -68,10 +68,10 @@ class SinglyLinkedList:
     Class SinglyLinkedList defines a singly linked list.
 
     Attributes:
-        head: The head of the linked list.
+        __head: The head of the linked list.
     """
     def __init__(self):
-        self.head = None
+        self.__head = None
 
     def sorted_insert(self, value):
         """
@@ -81,12 +81,12 @@ class SinglyLinkedList:
             value (int): The value to be inserted into the list.
         """
         new_node = Node(value)
-
-        if self.head is None or value < self.head.data:
-            new_node.next_node = self.head
-            self.head = new_node
+        
+        if self.__head is None or value < self.__head.data:
+            new_node.next_node = self.__head
+            self.__head = new_node
         else:
-            current = self.head
+            current = self.__head
             while current.next_node is not None and current.next_node.data < value:
                 current = current.next_node
             new_node.next_node = current.next_node
@@ -100,68 +100,8 @@ class SinglyLinkedList:
             str: A string representation of the linked list.
         """
         result = ""
-        current = self.head
+        current = self.__head
         while current:
             result += str(current.data) + "\n"
             current = current.next_node
         return result.strip()
-
-# Test the SinglyLinkedList class
-if __name__ == "__main__":
-    # Additional test cases
-    n1 = Node(3)
-    print(n1.data)
-
-    n2 = Node(-5)
-    print(n2.data)
-
-    n3 = Node(4)
-    n3.next_node = n2
-    print(n3.next_node.data)
-
-    try:
-        n4 = Node("4")
-    except Exception as e:
-        print(e)
-
-    try:
-        n2.next_node = "Node"
-    except Exception as e:
-        print(e)
-
-    sll = SinglyLinkedList()
-    sll.sorted_insert(2)
-    print(sll)
-
-    sll = SinglyLinkedList()
-    sll.sorted_insert(1)
-    sll.sorted_insert(2)
-    sll.sorted_insert(3)
-    sll.sorted_insert(4)
-    print(sll)
-
-    sll = SinglyLinkedList()
-    sll.sorted_insert(1)
-    sll.sorted_insert(2)
-    sll.sorted_insert(3)
-    sll.sorted_insert(4)
-    sll.sorted_insert(4)
-    sll.sorted_insert(3)
-    sll.sorted_insert(2)
-    sll.sorted_insert(1)
-    print(sll)
-
-    sll = SinglyLinkedList()
-    sll.sorted_insert(10)
-    sll.sorted_insert(2)
-    sll.sorted_insert(-3)
-    sll.sorted_insert(34)
-    sll.sorted_insert(4)
-    sll.sorted_insert(-5)
-    sll.sorted_insert(0)
-    sll.sorted_insert(8)
-    sll.sorted_insert(7)
-    print(sll)
-
-    sll = SinglyLinkedList()
-    print(sll)
