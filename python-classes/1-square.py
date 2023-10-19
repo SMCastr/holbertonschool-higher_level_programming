@@ -23,6 +23,7 @@ class Square:
         """
         self.__size = size
 
+
 if __name__ == "__main__":
     mysquare = Square(3)
     print(type(mysquare))
