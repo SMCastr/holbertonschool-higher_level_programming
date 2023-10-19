@@ -16,15 +16,19 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """
-        Initializes an instance of the Square class with a given size and position.
+        Initializes an instance of the Square class with 
+        a given size and position.
 
         Args:
             size (int, optional): The size of the square. Defaults to 0.
-            position (tuple, optional): The position of the square. Defaults to (0, 0).
+            position (tuple, optional): The position of the square. 
+            Defaults to (0, 0).
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
-            ValueError: If size is less than 0 or position contains negative values.
+            TypeError: If size is not an integer or 
+            position is not a tuple of 2 positive integers.
+            ValueError: If size is less than 0 or position 
+            contains negative values.
         """
         self.size = size
         self.position = position
@@ -98,7 +102,8 @@ class Square:
         Prints the square with the character # and uses the position attribute.
 
         If size is equal to 0, prints an empty line.
-        position should be use by using space - Don’t fill lines by spaces when position[1] > 0
+        position should be use by using space -
+        Don’t fill lines by spaces when position[1] > 0
         """
         if self.__size == 0:
             print()
