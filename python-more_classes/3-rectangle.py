@@ -4,7 +4,7 @@
 
 class Rectangle:
     """Define a Rectangle with width and height attributes."""
-  
+   
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle with optional width and height."""
         self.width = width
@@ -57,24 +57,3 @@ class Rectangle:
     def __repr__(self):
         """Return a string representation of the rectangle that can recreate the object."""
         return "Rectangle({}, {})".format(self.__width, self.__height)
-
-
-# Additional test cases
-
-my_rectangle = Rectangle(2, 4)
-print(str(my_rectangle))
-
-my_rectangle = Rectangle(2, 4)
-print(repr(my_rectangle))
-
-my_rectangle = Rectangle(2, 4)
-print(my_rectangle)
-
-my_rectangle = Rectangle(0, 4)
-print(str(my_rectangle))
-
-my_rectangle = Rectangle(2, 0)
-print(str(my_rectangle))
-
-my_rectangle = Rectangle(0, 0)
-print(str(my_rectangle))
