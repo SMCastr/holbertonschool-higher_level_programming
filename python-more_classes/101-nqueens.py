@@ -13,21 +13,22 @@ def is_safe(board, row, col, N):
             return False
     return True
 
-def solve_nqueens(board, col, N, solutions):
+def solve_nqueens(board, col, N):
     if col >= N:
         result = []
         for i in range(N):
             for j in range(N):
                 if board[i][j] == 1:
                     result.append([i, j])
-        solutions.append(result)
-        return
+        return result
 
+    solutions = []
     for i in range(N):
         if is_safe(board, i, col, N):
             board[i][col] = 1
-            solve_nqueens(board, col + 1, N, solutions)
+            solutions += solve_nqueens(board, col + 1, N)
             board[i][col] = 0
+    return solutions
 
 def nqueens(N):
     if not isinstance(N, int):
@@ -37,8 +38,7 @@ def nqueens(N):
         print("N must be at least 4")
         sys.exit(1)
     board = [[0 for _ in range(N)] for _ in range(N)]
-    solutions = []
-    solve_nqueens(board, 0, N, solutions)
+    solutions = solve_nqueens(board, 0, N)
     for solution in solutions:
         print(solution)
 
