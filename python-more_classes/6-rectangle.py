@@ -8,6 +8,7 @@ class Rectangle:
     """
     Define a Rectangle with width and height attributes.
     """
+
     number_of_instances = 0  # Class attribute
 
     def __init__(self, width=0, height=0):
@@ -92,10 +93,20 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
 
 # Additional test cases
-my_rectangle_1 = Rectangle(2, 4)
-my_rectangle_2 = Rectangle(2, 4)
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-del my_rectangle_1
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-del my_rectangle_2
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+if __name__ == '__main__':
+    print(Rectangle.number_of_instances)
+
+    r1 = Rectangle(12, 4)
+    print(Rectangle.number_of_instances)
+    del r1
+    print(Rectangle.number_of_instances)
+
+    for i in range(10):
+        m1 = Rectangle(12, 4)
+        print(Rectangle.number_of_instances)
+        del m1
+
+    listrect = []
+    for i in range(10):
+        listrect.append(Rectangle(12, 4))
+        print(Rectangle.number_of_instances)
