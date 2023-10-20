@@ -13,6 +13,7 @@ class Rectangle:
     number_of_instances = 0  # Class attribute
     print_symbol = "#"  # Class attribute
 
+
     def __init__(self, width=0, height=0):
         """
         Initialize a new Rectangle with optional width and height.
