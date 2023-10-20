@@ -8,7 +8,6 @@ class Rectangle:
     Define a Rectangle with width and height attributes.
     """
 
-
     number_of_instances = 0  # Class attribute
     print_symbol = "#"  # Class attribute
 
@@ -112,21 +111,22 @@ class Rectangle:
         else:
             return rect_2
 
-
 # Additional test cases
-
 if __name__ == '__main__':
     my_rectangle_1 = Rectangle(8, 4)
     my_rectangle_2 = Rectangle(2, 3)
 
-    if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
-        print("my_rectangle_1 is bigger or equal to my_rectangle_2")
-    else:
-        print("my_rectangle_2 is bigger than my_rectangle_1")
+    print(my_rectangle_1 == Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2))
+    print(my_rectangle2 == Rectangle.bigger_or_equal(my_rectangle1, my_rectangle2))
 
-    my_rectangle_2.width = 10
-    my_rectangle_2.height = 5
-    if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
-        print("my_rectangle_1 is bigger or equal to my_rectangle_2")
-    else:
-        print("my_rectangle_2 is bigger than my_rectangle_1")
+    my_rectangle1 = Rectangle(8, 4)
+    my_rectangle2 = Rectangle(4, 8)
+    print(my_rectangle1 == Rectangle.bigger_or_equal(my_rectangle1, my_rectangle2))
+    print(my_rectangle2 == Rectangle.bigger_or_equal(my_rectangle1, my_rectangle2))
+
+    my_rectangle1 = Rectangle(8, 4)
+    my_rectangle2 = Rectangle(1, 8)
+    try:
+        print(my_rectangle2 == Rectangle.bigger_or_equal(my_rectangle1, "Rect"))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name, e))
