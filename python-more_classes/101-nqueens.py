@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import sys
 
 def is_safe(board, row, col, N):
@@ -13,7 +12,6 @@ def is_safe(board, row, col, N):
         if board[i][j] == 1:
             return False
     return True
-
 
 def solve_nqueens(board, col, N):
     if col >= N:
