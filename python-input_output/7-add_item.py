@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import json
 
 def load_add_save(filename, args):
