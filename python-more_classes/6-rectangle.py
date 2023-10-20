@@ -96,6 +96,7 @@ class Rectangle:
 if __name__ == '__main__':
     print(Rectangle.number_of_instances)
 
+
     r1 = Rectangle(12, 4)
     print(Rectangle.number_of_instances)
     del r1
