@@ -3,6 +3,7 @@
 This module defines a class Rectangle that represents a rectangle.
 """
 
+
 class Rectangle:
     """
     Define a Rectangle with width and height attributes.
@@ -10,7 +11,6 @@ class Rectangle:
 
     number_of_instances = 0  # Class attribute
     print_symbol = "#"  # Class attribute
-
 
     def __init__(self, width=0, height=0):
         """
