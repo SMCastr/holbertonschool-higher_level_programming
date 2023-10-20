@@ -69,4 +69,64 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return 0
-       
+        return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """
+        Return a string representation of the rectangle using print_symbol.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
+
+    def __repr__(self):
+        """
+        Return a string representation of the rectangle to recreate the object.
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """
+        Print a message when an instance of Rectangle is deleted.
+        Decrement the number_of_instances when an instance is deleted.
+        """
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+
+# Additional test cases
+if __name__ == '__main__':
+    my_rectangle1 = Rectangle(8, 4)
+    print(my_rectangle1)
+
+    Rectangle.print_symbol = "C"
+    my_rectangle1 = Rectangle(8, 4)
+    print(my_rectangle1)
+
+    Rectangle.print_symbol = "C"
+    my_rectangle1 = Rectangle(8, 4)
+    my_rectangle2 = Rectangle(2, 1)
+    print(my_rectangle2)
+
+    Rectangle.print_symbol = "C"
+    my_rectangle1 = Rectangle(8, 4)
+    my_rectangle1.print_symbol = "H"
+    print(my_rectangle1)
+
+    my_rectangle2 = Rectangle(2, 1)
+    print(my_rectangle2)
+
+    my_rectangle1 = Rectangle(8, 4)
+    my_rectangle1.print_symbol = "H"
+    print(my_rectangle1)
+
+    Rectangle.print_symbol = "K"
+    my_rectangle2 = Rectangle(2, 1)
+    print(my_rectangle2)
+
+    my_rectangle1 = Rectangle(8, 4)
+    my_rectangle1.print_symbol = 89
+    print(my_rectangle1)
+
+    my_rectangle1 = Rectangle(8, 4)
+    my_rectangle1.print_symbol = ["Holberton", "School"]
+    print(my_rectangle1)
