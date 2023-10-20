@@ -3,6 +3,7 @@
 Module for generating Pascal's triangle.
 """
 
+
 def pascal_triangle(n):
     """
     Generate Pascal's triangle up to n rows.
