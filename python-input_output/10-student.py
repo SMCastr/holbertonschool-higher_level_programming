@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+"""This module defines a class Student."""
 class Student:
     """A class that represents a student with attributes first_name, last_name, and age."""
 
@@ -12,4 +13,4 @@ class Student:
         """Convert the student object to a JSON-compatible dictionary with optional attribute filter."""
         if attrs is None:
             return self.__dict__
-        return {attr: getattr
+        return {attr: getattr(self, attr) for attr in attrs}
