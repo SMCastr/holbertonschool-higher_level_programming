@@ -8,6 +8,7 @@ class Rectangle:
     Define a Rectangle with width and height attributes.
     """
 
+
     number_of_instances = 0  # Class attribute
     print_symbol = "#"  # Class attribute
 
@@ -111,7 +112,9 @@ class Rectangle:
         else:
             return rect_2
 
+
 # Additional test cases
+
 if __name__ == '__main__':
     my_rectangle_1 = Rectangle(8, 4)
     my_rectangle_2 = Rectangle(2, 3)
