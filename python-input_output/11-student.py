@@ -29,8 +29,8 @@ class Student:
         """
         if attrs is None:
             return {key: getattr(self, key) for key in self.__dict__.keys()}
-
-        return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+        else:
+            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
 
     def reload_from_json(self, json):
         """
@@ -49,4 +49,4 @@ class Student:
         Returns:
             str: A formatted string representing the Student object.
         """
-        return "<Student {} {} {}>".format(self.first_name, self.last_name, self.age)
+       
