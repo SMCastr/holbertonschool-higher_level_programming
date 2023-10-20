@@ -93,9 +93,10 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
 
 # Additional test cases
+
+
 if __name__ == '__main__':
     print(Rectangle.number_of_instances)
-
 
     r1 = Rectangle(12, 4)
     print(Rectangle.number_of_instances)
