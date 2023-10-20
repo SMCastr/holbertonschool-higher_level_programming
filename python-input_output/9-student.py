@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 class Student:
     """
     A class that defines a student with attributes first_name, last_name, and age.
