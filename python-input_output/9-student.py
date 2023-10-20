@@ -4,6 +4,7 @@ class Student:
     A class that defines a student with attributes first_name, last_name, and age.
     """
 
+
     def __init__(self, first_name, last_name, age):
         """
         Initialize a Student instance with first_name, last_name, and age.
@@ -17,7 +18,9 @@ class Student:
         self.last_name = last_name
         self.age = age
 
+
 # Sample usage for testing
+
 if __name__ == "__main__":
     student_1 = Student("Tom", "Smith", 89)
     print(student_1)  # Correct output - Student(“Tom”, “Smith”, 89)
