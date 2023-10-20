@@ -71,13 +71,15 @@ class Rectangle:
             return 0
         return 2 * (self.__width + self.__height)
 
-    def __str__(self):
-        """
-        Return a string representation of the rectangle using print_symbol.
-        """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
+  def __str__(self):
+    """
+    Return a string representation of the rectangle using print_symbol.
+    """
+    if self.__width == 0 or self.__height == 0:
+        return ""
+    return "\n".join(
+        [str(self.print_symbol) * self.__width] * self.__height
+    )
 
     def __repr__(self):
         """
@@ -94,6 +96,8 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
 
 # Additional test cases
+
+
 if __name__ == '__main__':
     my_rectangle1 = Rectangle(8, 4)
     print(my_rectangle1)
