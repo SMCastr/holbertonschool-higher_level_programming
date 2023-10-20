@@ -1,24 +1,35 @@
 #!/usr/bin/python3
+""" Module for class to JSON function
+"""
 
-import json
-
-def load_add_save(filename, args):
-    """Load a list from a JSON file, add new elements, and save it back to the file.
+def class_to_json(obj):
+    """
+    Returns the dictionary description with simple data structure (list, dictionary, string, integer, and boolean)
+    for JSON serialization of an object.
 
     Args:
-        filename (str): The name of the JSON file to read and update.
-        args (list): A list of strings to add to the loaded list.
+        obj: An instance of a class.
 
     Returns:
-        None
+        dict: A dictionary representing the object.
+
+    Note:
+        All attributes of the obj Class are serializable: list, dictionary, string, integer, and boolean.
     """
-    try:
-        with open(filename, 'r', encoding='utf-8') as file:
-            data = json.load(file)
-    except FileNotFoundError:
-        data = []
+    return obj.__dict__
 
-    data.extend(args)
+# Sample usage for testing
+if __name__ == "__main__":
+    class MyClass:
+        def __init__(self, name):
+            self.name = name
+            self.number = 0
 
-    with open(filename, 'w', encoding='utf-8') as file:
-        json.dump(data, file)
+    m = MyClass("John")
+    m.number = 89
+    print(type(m))
+    print(m)
+
+    mj = class_to_json(m)
+    print(type(mj))
+    print(mj)
