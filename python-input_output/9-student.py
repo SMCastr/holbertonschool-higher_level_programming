@@ -37,6 +37,7 @@ class Student:
         """
         return self.__dict__
 
+
 # Sample usage for testing
 if __name__ == "__main__":
     students = [Student("John", "Doe", 23), Student("Bob", "Dylan", 27)]
