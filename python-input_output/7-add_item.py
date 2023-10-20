@@ -1,24 +1,19 @@
 #!/usr/bin/python3
+import sys
+import os
 
-import json
+# Check if the add_item.json file exists
+if os.path.exists("add_item.json"):
+    # If it exists, load the existing list from the file
+    from load_from_json_file import load_from_json_file
+    my_list = load_from_json_file("add_item.json")
+else:
+    # If it doesn't exist, create an empty list
+    my_list = []
 
-def load_add_save(filename, args):
-    """Load a list from a JSON file, add new elements, and save it back to the file.
+# Append the command-line arguments to the list
+my_list.extend(sys.argv[1:])
 
-    Args:
-        filename (str): The name of the JSON file to read and update.
-        args (list): A list of strings to add to the loaded list.
-
-    Returns:
-        None
-    """
-    try:
-        with open(filename, 'r', encoding='utf-8') as file:
-            data = json.load(file)
-    except FileNotFoundError:
-        data = []
-
-    data.extend(args)
-
-    with open(filename, 'w', encoding='utf-8') as file:
-        json.dump(data, file)
+# Save the updated list as a JSON representation in add_item.json
+from save_to_json_file import save_to_json_file
+save_to_json_file(my_list, "add_item.json")
