@@ -72,7 +72,8 @@ class Rectangle:
 
     def __str__(self):
         """
-        Return a string representation of the rectangle using print_symbol.
+        Return a string representation of the
+        rectangle using print_symbol.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -80,7 +81,8 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Return a string representation of the rectangle to recreate the object.
+        Return a string representation of the rectangle to
+        recreate the object.
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
@@ -118,7 +120,9 @@ class Rectangle:
         """
         return cls(size, size)
 
+
 # Additional test cases
+
 if __name__ == '__main__':
     my_square = Rectangle.square(5)
     print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
