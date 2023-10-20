@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 """
-Student module
+This module defines a Student class that has methods for JSON serialization and deserialization.
 """
 
 class Student:
     """
-    Student class.
+    Defines a student with first_name, last_name, and age attributes.
 
-    Attributes:
-        first_name (str): The first name of the student.
-        last_name (str): The last name of the student.
-        age (int): The age of the student.
+    Methods:
+        to_json(self, attrs=None): Retrieves a dictionary representation of a Student instance.
+        reload_from_json(self, json): Replaces all attributes of the Student instance from a JSON dictionary.
     """
 
     def __init__(self, first_name, last_name, age):
@@ -31,10 +30,10 @@ class Student:
         Retrieves a dictionary representation of a Student instance.
 
         Args:
-            attrs (list): A list of attribute names to include in the dictionary.
+            attrs (list): A list of attributes to include in the dictionary (default is None).
 
         Returns:
-            dict: A dictionary containing the specified attributes.
+            dict: A dictionary containing the student's attributes.
         """
         if attrs is None:
             return self.__dict__
@@ -42,10 +41,10 @@ class Student:
 
     def reload_from_json(self, json):
         """
-        Replaces all attributes of the Student instance from a dictionary.
+        Replaces all attributes of the Student instance from a JSON dictionary.
 
         Args:
-            json (dict): A dictionary containing attribute-value pairs.
+            json (dict): A dictionary containing attribute names and values.
         """
         for key, value in json.items():
             setattr(self, key, value)
@@ -68,9 +67,8 @@ if __name__ == "__main__":
     print(type(j_student_1))
     print("{} {} {}".format(student_1.first_name, student_1.last_name, student_1.age))
 
-    with open(path, 'w') as f:
-        f.write('{"last_name": "Doe", "first_name": "John", "age": 23}')
-
+    save_to_json_file(j_student_1, path)
+    read_file(path)
     print("\nSaved to disk")
 
     print("Fake student:")
@@ -80,18 +78,7 @@ if __name__ == "__main__":
     print("{} {} {}".format(new_student_1.first_name, new_student_1.last_name, new_student_1.age))
 
     print("Load dictionary from file:")
-    def load_from_json_file(filename):
-        """
-        Creates an object from a JSON file.
-
-        Args:
-            filename (str): The name of the file to load.
-
-        Returns:
-            object: The object represented by the JSON file.
-        """
-        with open(filename, 'r') as f:
-            return json.load(f)
+    new_j_student_1 = load_from_json_file(path)
 
     new_student_1.reload_from_json(j_student_1)
     print(new_student_1)
