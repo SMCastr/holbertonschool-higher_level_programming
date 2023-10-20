@@ -3,7 +3,6 @@
 This module defines a class Rectangle that represents a rectangle.
 """
 
-
 class Rectangle:
     """
     Define a Rectangle with width and height attributes.
