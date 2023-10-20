@@ -12,6 +12,7 @@ class Student:
         age (int): The age of the student.
     """
 
+
     def __init__(self, first_name, last_name, age):
         """
         Initializes a new Student.
