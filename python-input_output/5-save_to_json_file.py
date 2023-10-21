@@ -1,11 +1,20 @@
+#!/usr/bin/python3
+"""
+This module defines a function to save an object to a text file in JSON format.
+"""
+
 import json
 
 def save_to_json_file(my_obj, filename):
     """
-    Save an object to a text file in JSON representation.
+    Save an object to a text file using JSON representation.
 
-    :param my_obj: The Python object to be serialized to JSON.
-    :param filename: The name of the file to save the JSON data.
+    Args:
+        my_obj: The Python object to be saved to the file.
+        filename (str): The name of the file where the object will be saved.
+
+    Returns:
+        None
     """
     with open(filename, 'w') as file:
         json.dump(my_obj, file)
@@ -13,7 +22,7 @@ def save_to_json_file(my_obj, filename):
 if __name__ == "__main__":
     # Example usage and test cases
     filename = "my_list.json"
-    my_list = [1, 2, 3, "Holberton"]
+    my_list = [1, 2, 3]
     save_to_json_file(my_list, filename)
 
     filename = "my_dict.json"
