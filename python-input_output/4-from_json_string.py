@@ -15,7 +15,7 @@ def from_json_string(my_str):
     return json.loads(my_str)
 
 if __name__ == "__main__":
-    # Example usage and test cases
+    # Additional test cases
     s_data = "[1, 2, 3, \"Holberton\"]"
     data = from_json_string(s_data)
     print(data)
@@ -36,24 +36,12 @@ if __name__ == "__main__":
     print(data)
     print(type(data))
 
-    s_data = """{
-        "name": "John",
-        "places": ["San Francisco", "Tokyo"],
-        "id": 12,
-        "info": {
-            "average": 3.14,
-            "age": 36
-        },
-        "is_active": true
-    }"""
+    s_data = 'Big dictionary'
     data = from_json_string(s_data)
     print(data)
-    print(type(data))
+    print(type(data)
 
-    s_data = """[
-        {"name": "Alice", "age": 25},
-        {"name": "Bob", "age": 30}
-    ]"""
+    s_data = 'Big array of dictionaries'
     data = from_json_string(s_data)
     print(data)
     print(type(data))
@@ -63,11 +51,10 @@ if __name__ == "__main__":
     print(data)
     print(type(data))
 
-    s_data = """{ 'id': 12, 'num': 4, 'holberton' }"""
+    s_data = "{'id': 12, 'num': 4, 'holberton' }"  # This is a wrong format
     try:
         data = from_json_string(s_data)
         print(data)
         print(type(data))
-    except json.JSONDecodeError as e:
-        print(e)
-
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
