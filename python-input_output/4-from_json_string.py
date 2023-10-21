@@ -1,65 +1,60 @@
+#!/usr/bin/python3
+
 import json
 
-def to_json_string(my_obj):
+def from_json_string(my_str):
     """
-    Return the JSON representation of an object as a string.
+    Return an object represented by a JSON string.
 
     Args:
-        my_obj: The Python object to be serialized to JSON.
+        my_str (str): A JSON string.
 
     Returns:
-        str: The JSON representation of the object.
+        object: The Python data structure represented by the JSON string.
     """
-    return json.dumps(my_obj)
+    return json.loads(my_str)
 
 if __name__ == "__main__":
     # Additional test cases
+    s_data = "[1, 2, 3, \"Holberton\"]"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    # List containing various data types
-    data = [1, 2, 3, "Holberton"]
-    s_data = to_json_string(data)
-    print(s_data)
+    s_data = "[]"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    # Empty list
-    data = []
-    s_data = to_json_string(data)
-    print(s_data)
+    s_data = "{ 'id': 12 }"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    # Dictionary
-    data = {'id': 12, 'numbers': [1, 2, 4]}
-    s_data = to_json_string(data)
-    print(s_data)
+    s_data = "{ 'id': 12, 'numbers': [1, 2, 4] }"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    # Large dictionary
-    data = {
-        'key1': 'value1',
-        'key2': 'value2',
-        'key3': 'value3',
-        'key4': 'value4',
-        'key5': 'value5',
-        'key6': 'value6',
-    }
-    s_data = to_json_string(data)
-    print(s_data)
+    s_data = 'Big dictionary'
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    # List of dictionaries
-    data = [
-        {'id': 1, 'name': 'John'},
-        {'id': 2, 'name': 'Alice'},
-        {'id': 3, 'name': 'Bob'},
-    ]
-    s_data = to_json_string(data)
-    print(s_data)
+    s_data = 'Big array of dictionaries'
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    # String
-    data = "Simple string"
-    s_data = to_json_string(data)
-    print(s_data)
+    s_data = '"Simple string"'
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    # Invalid data - dictionary with mixed data types
-    data = {'id': 3, 'title': 'Holberton', 'number': 89}
+    s_data = "{'id': 12, 'num': 4, 'holberton' }"  # This is a wrong format
     try:
-        s_data = to_json_string(data)
-        print(s_data)
-    except TypeError as e:
-        print(f"[{e.__class__.__name__}] {e}")
+        data = from_json_string(s_data)
+        print(data)
+        print(type(data))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
