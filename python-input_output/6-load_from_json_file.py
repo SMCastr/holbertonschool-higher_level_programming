@@ -1,13 +1,18 @@
-#!/usr/bin/python3
-
 import json
 
 def load_from_json_file(filename):
     """
     Create an object from a JSON file.
 
-    :param filename: The name of the JSON file to load.
-    :return: The Python object loaded from the JSON file.
+    Args:
+        filename (str): The name of the JSON file to load.
+
+    Returns:
+        object: The Python object loaded from the JSON file.
+
+    Raises:
+        FileNotFoundError: If the file doesn't exist.
+        json.JSONDecodeError: If the JSON string is invalid.
     """
     with open(filename, 'r') as file:
         return json.load(file)
@@ -29,7 +34,7 @@ if __name__ == "__main__":
         my_set = load_from_json_file(filename)
         print(my_set)
         print(type(my_set))
-    except Exception as e:
+    except FileNotFoundError as e:
         print("[{}] {}".format(e.__class__.__name__, e))
 
     try:
@@ -37,5 +42,5 @@ if __name__ == "__main__":
         my_fake = load_from_json_file(filename)
         print(my_fake)
         print(type(my_fake))
-    except Exception as e:
+    except json.JSONDecodeError as e:
         print("[{}] {}".format(e.__class__.__name__, e))
