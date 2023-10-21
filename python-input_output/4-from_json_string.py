@@ -57,7 +57,7 @@ if __name__ == "__main__":
     print(s_data)
 
     # Invalid data - dictionary with mixed data types
-    data = {'id': 3, 'title': 'Holberton', 89}
+    data = {'id': 3, 'title': 'Holberton', 'number': 89}
     try:
         s_data = to_json_string(data)
         print(s_data)
