@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+from base_geometry import BaseGeometry
+
 class Rectangle(BaseGeometry):
     """
     A class for creating rectangles.
