@@ -1,7 +1,14 @@
+#!/usr/bin/python3
+
 import sys
 sys.path.append("/path/to/directory")
 
+
+
+
 class Rectangle(BaseGeometry):
+
+
     def __init__(self, width, height):
         self.__width = width
         self.__height = height
