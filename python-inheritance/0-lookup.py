@@ -2,30 +2,12 @@
 
 def lookup(obj):
     """
-    This function takes an object 'obj' as input and returns a list of its available attributes and methods.
-    
+    Return the list of available attributes and methods of an object.
+
     Args:
-        obj: The object for which to retrieve attributes and methods.
+        obj: The object for which attributes and methods should be looked up.
 
     Returns:
-        A list of attribute and method names as strings.
-
+        A list of strings representing attributes and methods of the object.
     """
     return dir(obj)
-
-
-# Example usage
-
-if __name__ == "__main__":
-    class MyClass1(object):
-        pass
-
-    class MyClass2(object):
-        my_attr1 = 3
-
-        def my_meth(self):
-            pass
-
-    print(lookup(MyClass1))
-    print(lookup(MyClass2))
-    print(lookup(int))

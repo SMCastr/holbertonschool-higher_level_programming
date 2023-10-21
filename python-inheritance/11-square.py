@@ -1,25 +1,28 @@
-from rectangle import Rectangle
+#!/usr/bin/python3
 
-class Square_tow(Rectangle):
+class Square(Rectangle):
     """
-    A class named Square that inherits from Rectangle.
+    A class for creating squares.
+
+    Args:
+        size (int): The size of the square.
     """
     def __init__(self, size):
         """
-        Initializes an instance of Square.
+        Initialize a square with the given size.
+
+        Attributes:
+            __size (int): The size of the square.
         """
         self.integer_validator("size", size)
-        super().__init__(size, size)
         self.__size = size
-
-    def area(self):
-        """
-        Returns the area of the Square.
-        """
-        return self.__size ** 2
+        super().__init__(size, size)
 
     def __str__(self):
         """
-        Returns a string representation of the Square.
+        Return a string representation of the square.
+
+        Returns:
+            A string in the format [Square] <size>/<size>
         """
         return "[Square] {}/{}".format(self.__size, self.__size)
