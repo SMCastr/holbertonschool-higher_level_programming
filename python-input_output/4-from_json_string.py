@@ -16,25 +16,58 @@ def from_json_string(my_str):
 
 if __name__ == "__main__":
     # Example usage and test cases
-    s_my_list = "[1, 2, 3]"
-    my_list = from_json_string(s_my_list)
-    print(my_list)
-    print(type(my_list))
+    s_data = "[1, 2, 3, \"Holberton\"]"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
-    s_my_dict = """
-    {"is_active": true, "info": {"age": 36, "average": 3.14}, 
-    "id": 12, "name": "John", "places": ["San Francisco", "Tokyo"]}
-    """
-    my_dict = from_json_string(s_my_dict)
-    print(my_dict)
-    print(type(my_dict))
+    s_data = "[]"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
 
+    s_data = "{ 'id': 12 }"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
+
+    s_data = "{ 'id': 12, 'numbers': [1, 2, 4] }"
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
+
+    s_data = """{
+        "name": "John",
+        "places": ["San Francisco", "Tokyo"],
+        "id": 12,
+        "info": {
+            "average": 3.14,
+            "age": 36
+        },
+        "is_active": true
+    }"""
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
+
+    s_data = """[
+        {"name": "Alice", "age": 25},
+        {"name": "Bob", "age": 30}
+    ]"""
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
+
+    s_data = '"Simple string"'
+    data = from_json_string(s_data)
+    print(data)
+    print(type(data))
+
+    s_data = """{ 'id': 12, 'num': 4, 'holberton' }"""
     try:
-        s_my_dict = """
-        {"is_active": true, 12 }
-        """
-        my_dict = from_json_string(s_my_dict)
-        print(my_dict)
-        print(type(my_dict))
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+        data = from_json_string(s_data)
+        print(data)
+        print(type(data))
+    except json.JSONDecodeError as e:
+        print(e)
+
