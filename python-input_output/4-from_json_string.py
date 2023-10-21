@@ -39,7 +39,7 @@ if __name__ == "__main__":
     s_data = 'Big dictionary'
     data = from_json_string(s_data)
     print(data)
-    print(type(data)
+    print(type(data))
 
     s_data = 'Big array of dictionaries'
     data = from_json_string(s_data)
