@@ -4,6 +4,7 @@ a singly linked list"""
 
 
 class Node:
+    """This class defines a node of a singly linked list"""
     def __init__(self, data, next_node=None):
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
