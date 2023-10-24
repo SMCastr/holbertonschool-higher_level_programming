@@ -85,19 +85,3 @@ class Rectangle:
         Print a message when an instance of Rectangle is deleted.
         """
         print("Bye rectangle...")
-
-# Additional test cases
-my_rectangle = Rectangle(2, 4)
-del my_rectangle
-
-my_rectangle = Rectangle(2, 4)
-del my_rectangle
-
-try:
-    my_rectangle = Rectangle(2, 4)
-    my_rectangle.width = 12
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-for i in range(10):
-    m1 = Rectangle(2, 4)
