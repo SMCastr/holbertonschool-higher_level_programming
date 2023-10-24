@@ -54,7 +54,6 @@ class SinglyLinkedList:
             self.__head = new_node
         new_node.next_node = current
 
-
     def __str__(self):
         result = []
         current = self.__head
