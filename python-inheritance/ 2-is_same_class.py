@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""This module contains a function that returns 
+True if the object is exactly"""
 
 def is_same_class(obj, a_class):
     """
