@@ -65,6 +65,7 @@ class SinglyLinkedList:
             current = current.next_node
         return "\n".join(result)
 
+
 if __name__ == "__main__":
     sll = SinglyLinkedList()
     sll.sorted_insert(2)
