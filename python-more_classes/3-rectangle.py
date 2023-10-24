@@ -59,3 +59,4 @@ class Rectangle:
             if i is not self.__height - 1:
                 string_rep += "\n"
         return string_rep
+    
