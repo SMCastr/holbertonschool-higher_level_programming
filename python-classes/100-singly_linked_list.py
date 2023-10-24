@@ -49,12 +49,9 @@ class SinglyLinkedList:
         else:
             current = self.__head
             
-            valid = current.next_node.data < value
-            
-            while current.next_node is not None and valid:
+            temp = current.next_node
+            while current.next_node is not None and temp.data < value:
                 current = current.next_node
-            
-            
             new_node.next_node = current.next_node
             current.next_node = new_node
 
