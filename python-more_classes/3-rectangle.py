@@ -49,13 +49,13 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return a string representation of the
-        rectangle using # characters."""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return "\n".join(['#' * self.__width] * self.__height)
+        """Returns string representation of a Rectangle"""
 
-    def __repr__(self):
-        """Return a string representation of the
-        rectangle that can recreate the object."""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        if self.__width is 0 or self.__height is 0:
+            return ""
+        string_rep = ""
+        for i in range(self.__height):
+            string_rep += "#" * self.__width
+            if i is not self.__height - 1:
+                string_rep += "\n"
+        return string_rep
