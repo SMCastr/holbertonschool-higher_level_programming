@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+"""This module contains a class that defines a node of
+a singly linked list"""
 
+import
 class Node:
     def __init__(self, data, next_node=None):
         if not isinstance(data, int):
@@ -32,6 +35,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """This class defines a singly linked list"""
     def __init__(self):
         self.__head = None
 
