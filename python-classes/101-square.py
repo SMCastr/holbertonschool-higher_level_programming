@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module contains a class that defines a square"""
 
+
 class Square:
     """this class defines a square"""
     def __init__(self, size=0, position=(0, 0)):
@@ -55,4 +56,3 @@ class Square:
                 if i != self.__size - 1:
                     res += "\n"
             return res
-
