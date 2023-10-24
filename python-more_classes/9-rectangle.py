@@ -117,14 +117,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """
-        Create a new Rectangle instance with width == height == size.
+        Create a new Rectangle instance with
+        width == height == size.
         """
         return cls(size, size)
-
-
-# Additional test cases
-
-if __name__ == '__main__':
-    my_square = Rectangle.square(5)
-    print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
-    print(my_square)
