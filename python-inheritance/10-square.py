@@ -1,21 +1,20 @@
 #!/usr/bin/python3
+""" Geometry Module"""
 
-from models.rectangle import Rectangle
+
+Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """
     A class for creating squares.
-
-    Args:
-        size (int): The size of the square.
     """
     def __init__(self, size):
         """
         Initialize a square with the given size.
-
-        Attributes:
-            __size (int): The size of the square.
         """
         self.integer_validator("size", size)
         self.__size = size
-        super().__init__(size, size)
+        super().__init__(size, size) 
+    def area(self):
+        """Calculates area"""
+        return self.__size ** 2
