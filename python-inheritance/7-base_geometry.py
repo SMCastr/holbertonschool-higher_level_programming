@@ -6,12 +6,7 @@ class BaseGeometry:
     """
     A class for geometry operations.
     """
-    def __init__(self):
-        """
-        Initialize an instance of BaseGeometry.
-        """
-        self.__width = 0
-        self.__height = 0
+
 
     def area(self):
         """
@@ -28,3 +23,6 @@ class BaseGeometry:
             raise TypeError(name + " must be an integer")
         if value <= 0:
             raise ValueError(name + " must be greater than 0")
+        else:
+            self.name = name
+            self.value = value
