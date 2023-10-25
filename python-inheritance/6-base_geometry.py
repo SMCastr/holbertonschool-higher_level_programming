@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Geometry Module"""
 
+
 class BaseGeometry:
     """
     A class for geometry operations.
