@@ -1,15 +1,10 @@
 #!/usr/bin/python3
+""" Geometry Module"""
+
+
 class BaseGeometry:
     """
     A class for geometry operations.
-
-    Methods:
-        area(self): Raise an Exception with the message "area() is not implemented".
-        integer_validator(self, name, value): Validate the integer value.
-
-    Attributes:
-        __width (int): The width of the geometry.
-        __height (int): The height of the geometry.
     """
     def __init__(self):
         """
@@ -27,13 +22,6 @@ class BaseGeometry:
     def integer_validator(self, name, value):
         """
         Validate the integer value.
-
-        Args:
-            name (str): The name of the attribute.
-            value: The value to be validated.
-
-        Returns:
-            None.
         """
         if not isinstance(value, int):
             raise TypeError(name + " must be an integer")
