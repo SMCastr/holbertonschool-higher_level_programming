@@ -7,7 +7,6 @@ class BaseGeometry:
     A class for geometry operations.
     """
 
-
     def area(self):
         """
         Raise an Exception with the
@@ -19,9 +18,9 @@ class BaseGeometry:
         """
         Validate the integer value.
         """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(name + " must be an integer")
-        if value <= 0:
+        elif value <= 0:
             raise ValueError(name + " must be greater than 0")
         else:
             self.name = name
