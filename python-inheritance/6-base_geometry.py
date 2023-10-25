@@ -1,11 +1,9 @@
 #!/usr/bin/python3
+""" Geometry Module"""
 
 class BaseGeometry:
     """
     A class for geometry operations.
-
-    Methods:
-        area(self): Raise an Exception with the message "area() is not implemented".
     """
     def area(self):
         """
