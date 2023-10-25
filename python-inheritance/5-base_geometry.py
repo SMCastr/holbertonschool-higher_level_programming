@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Module BaseGeometry"""
+"""Geometry Module"""
 
 
 class BaseGeometry:
-   """Class BaseGeometry"""
-   pass
+    """Define BaseGeometry class"""
+    pass
