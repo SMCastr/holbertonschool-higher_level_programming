@@ -6,6 +6,7 @@ and prints statistics.
 """
 
 import sys
+
 from unittest.main import MAIN_EXAMPLES
 
 def print_stats(total_size, status_codes):
