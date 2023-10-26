@@ -4,6 +4,7 @@
 
 append_after = __import__('100-append_after').append_after
 
+
 append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
 """Inserts a line of text to a file after each line containing a specific string."""
 
