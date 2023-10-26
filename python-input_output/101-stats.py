@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-""" Module for log parsing"""
-
+"""
+Log parsing and metrics computation.
+"""
 
 import sys
 
 def print_stats(total_size, status_codes):
     """
-    Prints the statistics including total
+    Print statistics including total
     file size and status code counts.
     """
     print("File size: {:d}".format(total_size))
@@ -17,8 +18,7 @@ def print_stats(total_size, status_codes):
 
 def main():
     total_size = 0
-    status_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
-                    "403": 0, "404": 0, "405": 0, "500": 0}
+    status_codes = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
     count = 0
 
     try:
@@ -26,6 +26,7 @@ def main():
             count += 1
             line = line.strip()
             parts = line.split()
+            
             if len(parts) >= 9 and parts[-2] in status_codes:
                 size = int(parts[-1])
                 code = parts[-2]
@@ -39,5 +40,4 @@ def main():
         print_stats(total_size, status_codes)
         raise
 
-if __name__ == "__main__":
-    main()
+if __name__ ==
