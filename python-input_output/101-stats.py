@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Module for stats"""
+""" Module for log parsing"""
+
 
 import sys
 
@@ -23,12 +24,12 @@ def main():
     try:
         for line in sys.stdin:
             count += 1
+            line = line.strip()
             parts = line.split()
-            if len(parts) >= 2:
+            if len(parts) >= 9 and parts[-2] in status_codes:
                 size = int(parts[-1])
                 code = parts[-2]
-                if code in status_codes:
-                    status_codes[code] += 1
+                status_codes[code] += 1
                 total_size += size
 
             if count % 10 == 0:
