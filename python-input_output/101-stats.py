@@ -5,7 +5,8 @@ import sys
 
 def print_stats(total_size, status_codes):
     """
-    Prints the statistics including total file size and status code counts.
+    Prints the statistics including total
+    file size and status code counts.
     """
     print("File size: {:d}".format(total_size))
     sorted_status_codes = sorted(status_codes.items())
