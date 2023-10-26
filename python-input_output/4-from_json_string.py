@@ -2,6 +2,7 @@
 """ Module for from_json_string"""
 import json
 
+
 def from_json_string(my_str):
     """
     Return an object represented by a JSON string.
