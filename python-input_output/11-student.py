@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines a Student class that has methods for JSON serialization and deserialization.
+This module defines a Student class that has methods
+for JSON serialization and deserialization.
 """
 
 
@@ -19,7 +20,8 @@ class Student:
         """
         if attrs is None:
             return self.__dict__
-        return {key: value for key, value in self.__dict__.items() if key in attrs}
+        return {key: value for key, value in self.__dict__.items()
+                if key in attrs}
 
     def reload_from_json(self, json):
         """
