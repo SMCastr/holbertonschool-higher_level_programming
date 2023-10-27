@@ -1,18 +1,36 @@
-# Test 1: Valid matrix multiplication
-Input Matrix A:
-1 2
-3 4
-Input Matrix B:
-1 2
-3 4
-Expect:
-7 10
-15 22
+# Additional test cases
+if __name__ == "__main__":
+    try:
+        # Ensure that the script works with NumPy
+        import numpy as np
 
-# Test 2: Incompatible matrix multiplication
-Input Matrix A:
-1 2
-Input Matrix B:
-3 4
-5 6
-Expect: ValueError: Incompatible matrices for multiplication
+        ma = np.array([[1, 2], [3, 4]])
+        mb = np.array([[5, 6], [7, 8]])
+        result = lazy_matrix_mul(ma, mb)
+        print("Correct output - case:", ma, "/", mb)
+        print(result)
+    except ImportError:
+        print("You have to use the module numpy")
+
+    try:
+        # Test for incompatible matrix multiplication
+        ma = [[1, 2], [3, 4]]
+        mb = "Holberton"
+        lazy_matrix_mul(ma, mb)
+    except ValueError as ve:
+        print(ve)
+
+    try:
+        # Test for incompatible matrix multiplication
+        ma = [[5, 6], [7, 8]]
+        mb = "Holberton"
+        lazy_matrix_mul(ma, mb)
+    except ValueError as ve:
+        print(ve)
+
+    # Additional test case: Test for matrices with different sizes
+    ma = [[5, 6, 10], [7, 8]]
+    mb = [[5, 6], [7, 8]]
+    result = lazy_matrix_mul(ma, mb)
+    print("Correct output - case:", ma, "/", mb)
+    print(result)
