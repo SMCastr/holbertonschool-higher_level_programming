@@ -12,8 +12,6 @@ class Base:
 
     def __init__(self, id=None):
         """init method for base class
-        Args:
-            id (int): id of the object
             """
         if id is not None:
             self.id = id
