@@ -1,15 +1,19 @@
-#!/usr/bin/env python3
-""" Module for lazy_matrix_mul method"""
+#!/usr/bin/python3
+"""101-lazy_matrix_mul.py"""
 
-
-import numpy as np
 
 def lazy_matrix_mul(m_a, m_b):
     """
-    Multiply two matrices using NumPy.
+    Multiply two matrices.
     """
-    try:
-        result = np.matmul(m_a, m_b)
-        return result.tolist()  # Convert the NumPy array back to a list of lists
-    except ValueError as e:
-        raise ValueError("Incompatible matrices for multiplication") from e
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("Incompatible matrices for multiplication")
+
+    result = [[0 for _ in range(len(m_b[0]))] for _ in range(len(m_a))]
+
+    for i in range(len(m_a)):
+        for j in range(len(m_b[0])):
+            for k in range(len(m_b)):
+                result[i][j] += m_a[i][k] * m_b[k][j]
+
+    return result
