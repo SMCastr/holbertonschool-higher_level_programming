@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ 12-main """
+
+
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
@@ -15,4 +17,3 @@ if __name__ == "__main__":
     r2.update(**r1_dictionary)
     print(r2)
     print(r1 == r2)
-    

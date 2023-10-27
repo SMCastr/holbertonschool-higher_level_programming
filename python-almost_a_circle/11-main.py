@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ 11-main """
+
+
 from models.square import Square
 
 if __name__ == "__main__":
@@ -27,4 +29,3 @@ if __name__ == "__main__":
 
     s1.update(size=7, id=89, y=1)
     print(s1)
-    

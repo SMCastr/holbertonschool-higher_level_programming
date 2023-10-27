@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ 13-main """
+
+
 from models.square import Square
 
 if __name__ == "__main__":
@@ -15,4 +17,3 @@ if __name__ == "__main__":
     s2.update(**s1_dictionary)
     print(s2)
     print(s1 == s2)
-    

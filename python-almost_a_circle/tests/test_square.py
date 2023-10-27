@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """ 10-main """
 
+
 import unittest
 from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
+    """ Test cases for Square class"""
     def test_str(self):
         s = Square(5, 3, 4, 1)
         self.assertEqual(str(s), "[Square] (1) 3/4 - 5")

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ 6-main """
+
+
 from models.rectangle import Rectangle
 
 if __name__ == "__main__":
@@ -11,4 +13,3 @@ if __name__ == "__main__":
 
     r2 = Rectangle(3, 2, 1, 0)
     r2.display()
-    
