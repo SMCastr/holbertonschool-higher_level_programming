@@ -89,21 +89,23 @@ class TestBase(unittest.TestCase):
         self.assertEqual(square.y, 8)
 
     def test_save_to_file(self):
-        """Test the save_to_file method of the Base class"""
-         # Test with a list of Rectangle objects
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
-        list_rectangles = [r1, r2]
-        Base.save_to_file(list_rectangles)
-        with open("Rectangle.json", "r") as file:
-        self.assertEqual(file.read(
-        ), '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
+        def test_save_to_file(self):
+            """Test the save_to_file method of the Base class"""
+            # Test with a list of Rectangle objects
+            r1 = Rectangle(10, 7, 2, 8)
+            r2 = Rectangle(2, 4)
+            list_rectangles = [r1, r2]
+            Base.save_to_file(list_rectangles)
+            with open("Rectangle.json", "r") as file:
+                self.assertEqual(file.read(), '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
 
-         # Test with a list of Square objects
-        s1 = Square(10, 2, 8)
-        s2 = Square(2)
-        list_squares = [s1, s2]
-        Base.save_to_file(list_squares)
+            # Test with a list of Square objects
+            s1 = Square(10, 2, 8)
+            s2 = Square(2)
+            list_squares = [s1, s2]
+            Base.save_to_file(list_squares)
+            with open("Square.json", "r") as file:
+                self.assertEqual(file.read(), '[{"id": 3, "size": 10, "x": 2, "y": 8}, {"id": 4, "size": 2, "x": 0, "y": 0}]')
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(
             ), '[{"id": 3, "size": 10, "x": 2, "y": 8}, {"id": 4, "size": 2, "x": 0, "y": 0}]')
