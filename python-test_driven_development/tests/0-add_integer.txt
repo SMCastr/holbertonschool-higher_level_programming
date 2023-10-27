@@ -1,61 +1,47 @@
-# Test for the add_integer function
-
->>> from file import add_integer
-
-# Correct output - case: 1 + 2
+>>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
-
-# Correct output - case: 1 + -2
->>> add_integer(1, -2)
--1
-
-# Correct output - case: 1.4 + 2
->>> add_integer(1.4, 2)
+>>> add_integer(100, -2)
+98
+>>> add_integer(2)
+100
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(4, "School")
 Traceback (most recent call last):
-  ...
-TypeError: Both inputs must be integers
-
-# Correct output - case: 1 + "2"
->>> add_integer(1, "2")
+    ...
+TypeError: b must be an integer
+>>> add_integer(None)
 Traceback (most recent call last):
-  ...
-TypeError: Both inputs must be integers
-
-# Regular tests passed
-
-# Test present: integer casting
->>> add_integer(int(1.5), int(-2.7))
--1
-
-# Test present: check type
->>> add_integer(1, "2")
-Traceback (most recent call last):
-  ...
-TypeError: Both inputs must be integers
-
-# Test present: regular addition
->>> add_integer(5, 3)
-8
-
-# Test present: Float overflow
->>> add_integer(999999999, 999999999)
-1999999998
-
-# Test present: cannot convert float NaN to integer
->>> add_integer(float('nan'), 3)
-Traceback (most recent call last):
-  ...
-TypeError: Both inputs must be integers
-
-# Test present: missing one argument
->>> add_integer(5)
-Traceback (most recent call last):
-  ...
-TypeError: add_integer() missing 1 required positional argument: 'b'
-
-# Test present: missing two arguments
+    ...
+TypeError: a must be an integer
 >>> add_integer()
 Traceback (most recent call last):
-  ...
-TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer(float('inf'), float('-inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer("one", 6)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(tres, 6)
+Traceback (most recent call last):
+    ...
+NameError: name 'tres' is not defined
+>>> add_integer(int("one"), 7)
+Traceback (most recent call last):
+    ...
+ValueError: invalid literal for int() with base 10: 'one'
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+>>> add_integer(float('inf'), 5)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(2, 4.6)
+6

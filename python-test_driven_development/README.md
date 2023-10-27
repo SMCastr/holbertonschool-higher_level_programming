@@ -52,7 +52,13 @@ The script `max_integer.py` includes a function `max_integer(list=[])` that find
 
 This test file contains unittests for the `max_integer` function. It covers various scenarios, including lists of positive and negative integers, lists with repeated values, an empty list, and a large list of integers.
 
-## Running the Tests
+## Extra Credit
 
-To run the tests for each script, use the following command for Doctest files:
+### 100-matrix_mul.py
+
+The script `100-matrix_mul.py` defines a function `matrix_mul(m_a, m_b)` that multiplies two matrices. It raises a `TypeError` exception if the input arguments `m_a` and `m_b` are not lists of lists of integers or floats. It also raises a `TypeError` exception if the input matrices are not rectangular or if they cannot be multiplied. The function returns a new matrix with the results.
+
+### 100-matrix_mul.txt
+
+This test file contains test cases for the `matrix_mul` function. It ensures that the function correctly multiplies the matrices and handles different scenarios, such as valid and invalid input types and dimensions.
 

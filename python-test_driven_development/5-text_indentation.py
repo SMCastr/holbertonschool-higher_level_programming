@@ -1,19 +1,38 @@
 #!/usr/bin/python3
+""" prints a text with 2 new lines after each of these characters: ., ?and:"""
+
 
 def text_indentation(text):
     """
-    Print a text with 2 new lines after each '.', '?', and ':' characters.
+    >>> text_indentation("")
+    <BLANKLINE>
 
-    Args:
-        text (str): The input text.
+    >>> text_indentation('')
+    <BLANKLINE>
 
-    Raises:
-        TypeError: If text is not a string.
+    >>> text_indentation("?")
+    <BLANKLINE>
+
+    >>> text_indentation(":")
+    <BLANKLINE>
+
+    >>> text_indentation(".")
+    <BLANKLINE>
+
     """
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
-
+    space = False  # flag to check if there is a space
     for char in text:
-        print(char, end="")
-        if char in [".", "?", ":"]:
-            print("\n")
+        if not space:
+            if char == ' ':
+                continue
+            else:
+                space = True
+        if char == '.' or char == '?' or char == ':':
+            print(char)
+            print()
+            space = False
+        else:
+            print(char, end="")
+            

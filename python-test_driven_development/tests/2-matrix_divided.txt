@@ -1,57 +1,29 @@
-# Test for the matrix_divided function
-
->>> from matrix_divided import matrix_divided
-
-# Test with a valid matrix and divisor
->>> matrix = [
-...     [1, 2, 3],
-...     [4, 5, 6]
-... ]
->>> matrix_divided(matrix, 3)
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix_divided([[]], 3)
+[[]]
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-
-# Test with a valid matrix and a different divisor
->>> matrix_divided(matrix, 2)
-[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
-
-# Test with all elements being floats
->>> matrix = [
-...     [1.0, 2.0, 3.0],
-...     [4.0, 5.0, 6.0]
-... ]
->>> matrix_divided(matrix, 3)
-[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-
-# Test with zero divisor (should raise a ZeroDivisionError)
->>> matrix_divided(matrix, 0)
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], -2)
+[[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
+>>> matrix_divided([[1.5, 2.8, 3.3], [4.2, 5.5, 6.6]], 2)
+[[0.75, 1.4, 1.65], [2.1, 2.75, 3.3]]
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
 Traceback (most recent call last):
-  ...
+    ...
 ZeroDivisionError: division by zero
-
-# Test with a non-numeric divisor (should raise a TypeError)
->>> matrix_divided(matrix, "3")
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "hey")
 Traceback (most recent call last):
-  ...
+    ...
 TypeError: div must be a number
-
-# Test with rows of different sizes (should raise a TypeError)
->>> matrix = [
-...     [1, 2, 3],
-...     [4, 5]
-... ]
->>> matrix_divided(matrix, 3)
+>>> matrix_divided((1, 3), 7)
 Traceback (most recent call last):
-  ...
-TypeError: Each row of the matrix must have the same size
-
-# Test with matrix containing non-numeric elements (should raise a TypeError)
->>> matrix = [
-...     [1, 2, 'a'],
-...     [4, 5, 6]
-... ]
->>> matrix_divided(matrix, 3)
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+>>> matrix_divided([[1, "hi", 3], [4, 5, 6]], 6)
 Traceback (most recent call last):
   ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-# Regular tests passed
