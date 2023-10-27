@@ -115,4 +115,3 @@ class Base:
 
         # Exit the turtle graphics window
         turtle.done()
-        

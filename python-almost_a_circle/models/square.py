@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Square class """
+
+
 from models.rectangle import Rectangle
 
 
@@ -58,4 +60,3 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ dictionary representation of square """
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
-    
