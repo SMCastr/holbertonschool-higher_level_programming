@@ -27,7 +27,9 @@ def matrix_divided(matrix, div):
     >>> matrix_divided([[1.5, 2.8, 3.3], [4.2, 5.5, 6.6]], 2)
     [[0.75, 1.4, 1.65], [2.1, 2.75, 3.3]]
     """
-    if not all(isinstance(row, list) for row in matrix) or not all(all(isinstance(num, (int, float)) for num in row) for row in matrix):
+    if not all(isinstance(row, list) for row
+            in matrix) or not all(all(isinstance(num, (int, float))
+            for num in row) for row in matrix):
         raise TypeError("matrix must be a list of lists of integers/floats")
     if len(set(len(row) for row in matrix)) > 1:
         raise ValueError("Each row of the matrix must have the same size")
