@@ -1,6 +1,18 @@
 # Test 1: Valid matrix multiplication
-[[1, 2], [3, 4]] x [[1, 2], [3, 4]] = [[7, 10], [15, 22]]
+Input Matrix A:
+1 2
+3 4
+Input Matrix B:
+1 2
+3 4
+Expect:
+7 10
+15 22
 
 # Test 2: Incompatible matrix multiplication
-[[1, 2]] x [[3, 4], [5, 6]]
+Input Matrix A:
+1 2
+Input Matrix B:
+3 4
+5 6
 Expect: ValueError: Incompatible matrices for multiplication
