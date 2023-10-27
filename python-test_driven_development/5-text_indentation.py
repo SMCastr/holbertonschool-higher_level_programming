@@ -18,7 +18,6 @@ def text_indentation(text):
 
     >>> text_indentation(".")
     <BLANKLINE>
-
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
@@ -35,4 +34,4 @@ def text_indentation(text):
             space = False
         else:
             print(char, end="")
-            
+ 
