@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" 101-main """
 
 
 def add_attribute(obj, attr_name, attr_value):

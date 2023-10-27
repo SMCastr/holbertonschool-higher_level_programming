@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+""" 10-main """
+
 import unittest
 from models.square import Square
 
