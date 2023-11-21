@@ -9,100 +9,87 @@ A database is a collection of data stored in a computer system. Databases can be
 ## What is a relational database?
 A relational database is a type of database that stores and provides access to data points that are related to one another. Relational databases are based on the relational model, an intuitive, straightforward way of representing data in tables. In a relational database, each row in the table is a record with a unique ID called the key. The columns of the table hold attributes of the data, and each record usually has a value for each attribute, making it easy to establish the relationships among data points.
 
-## What is a relational database management system (RDBMS)?
-A relational database management system (RDBMS) is a program that allows you to create, update, and administer a relational database. Most relational database management systems use the SQL language to access the database.
+# SQL Introduction Project
 
-## What does SQL stand for? What is it used for?
-SQL stands for Structured Query Language. It is a language used to interact with databases. It is a standard language for relational database management systems (RDBMS). It is particularly useful in handling structured data, i.e. data incorporating relations among entities and variables.
+This project covers various SQL tasks to get hands-on experience with MySQL. The tasks involve creating databases, tables, and performing operations such as inserting, updating, and querying data.
 
-## What’s a primary key? What’s a foreign key? How to link Tables with foreign keys?
-A primary key is a column or group of columns in a table that uniquely identify every row in that table. A foreign key is a column or group of columns in a table that links to a primary key in another table. To link tables with foreign keys, you need to create a foreign key in the table that you want to link to the primary key in another table.
+## Table of Contents
+1. [List Databases](./0-list_databases.sql)
+2. [Create a Database](./1-create_database_if_missing.sql)
+3. [Delete a Database](./2-remove_database.sql)
+4. [List Tables](./3-list_tables.sql)
+5. [First Table](./4-first_table.sql)
+6. [Full Description](./5-full_table.sql)
+7. [List All in Table](./6-list_values.sql)
+8. [First Add](./7-insert_value.sql)
+9. [Count 89](./8-count_89.sql)
+10. [Full Creation](./9-full_creation.sql)
+11. [List by Best](./10-top_score.sql)
+12. [Select the Best](./11-best_score.sql)
+13. [Cheating is Bad](./12-no_cheating.sql)
+14. [Score Too Low](./13-change_class.sql)
+15. [Average](./14-average.sql)
+16. [Number by Score](./15-groups.sql)
+17. [Say My Name](./16-no_link.sql)
 
-## How to create a new database in MySQL?
-To create a new database in MySQL, you need to use the CREATE DATABASE statement. The syntax is as follows:
-```
-CREATE DATABASE database_name;
-```
-For example, to create a database called `my_database`, you can use the following statement:
-```
-CREATE DATABASE my_database;
-```
+## Definitions and Explanations
 
-## How to create a new table in MySQL?
-To create a new table in MySQL, you need to use the CREATE TABLE statement. The syntax is as follows:
-```
-CREATE TABLE table_name (
-    column1 datatype,
-    column2 datatype,
-    column3 datatype,
-   ....
-);
-```
-For example, to create a table called `my_table` with three columns, `id`, `name`, and `age`, you can use the following statement:
-```
-CREATE TABLE my_table (
-    id INT,
-    name VARCHAR(50),
-    age INT
-);
-```
+### 0. List Databases
+Lists all databases on the MySQL server.
 
-## How to insert a new item in a table?
-To insert a new item in a table, you need to use the INSERT INTO statement. The syntax is as follows:
-```
-INSERT INTO table_name (column1, column2, column3, ...)
-VALUES (value1, value2, value3, ...);
-```
-For example, to insert a new item into the table `my_table` with the values `1`, `John`, and `25`, you can use the following statement:
-```
-INSERT INTO my_table (id, name, age)
-VALUES (1, 'John', 25);
-```
+### 1. Create a Database
+Creates the database `hbtn_0c_0` if it doesn't already exist.
 
-## How to fetch rows from a SQL table?
-To fetch rows from a SQL table, you need to use the SELECT statement. The syntax is as follows:
-```
-SELECT column1, column2, ...
-FROM table_name;
-```
-For example, to fetch all rows from the table `my_table`, you can use the following statement:
-```
-SELECT * FROM my_table;
-```
+### 2. Delete a Database
+Deletes the database `hbtn_0c_0` if it exists.
 
-## How to update rows in a SQL table?
-To update rows in a SQL table, you need to use the UPDATE statement. The syntax is as follows:
-```
-UPDATE table_name
-SET column1 = value1, column2 = value2, ...
-WHERE condition;
-```
-For example, to update the row with the id `1` in the table `my_table` with the values `2`, `Jane`, and `30`, you can use the following statement:
-```
-UPDATE my_table
-SET id = 2, name = 'Jane', age = 30
-WHERE id = 1;
-```
+### 3. List Tables
+Lists all tables in the specified database.
 
-## How to delete rows from a SQL table?
-To delete rows from a SQL table, you need to use the DELETE statement. The syntax is as follows:
-```
-DELETE FROM table_name
-WHERE condition;
-```
-For example, to delete the row with the id `1` in the table `my_table`, you can use the following statement:
-```
-DELETE FROM my_table
-WHERE id = 1;
-```
+### 4. First Table
+Creates a table called `first_table` in the specified database.
 
-## What’s a schema?
-A schema is a collection of database objects, including tables, views, indexes, and synonyms. You can create a schema to group database objects together, which makes it easier to manage permissions on those objects.
+### 5. Full Description
+Prints the full description of the `first_table` in the specified database.
 
-## What’s a stored procedure?
-A stored procedure is a set of SQL statements that are stored in the database server. Stored procedures can be used to perform complex database operations that would otherwise require multiple SQL statements. Stored procedures can also be used to improve performance by reducing network traffic between the application and the database server.
+### 6. List All in Table
+Lists all rows of the `first_table` in the specified database.
 
-## What’s a trigger?
-A trigger is a special type of stored procedure that is automatically executed when a specific event occurs. For example, you can create a trigger that is executed when a new row is inserted into a table. Triggers can be used to enforce business rules, perform data validation, or perform other actions that are not possible with standard SQL statements.
+### 7. First Add
+Inserts a new row into the `first_table` in the specified database.
 
-## What are the main differences between SQL and NoSQL?
+### 8. Count 89
+Displays the number of records with `id = 89` in the `first_table`.
+
+### 9. Full Creation
+Creates a table called `second_table` and adds multiple rows to it.
+
+### 10. List by Best
+Lists all records of the `second_table` ordered by descending score.
+
+### 11. Select the Best
+Lists records with a score >= 10 in the `second_table` ordered by descending score.
+
+### 12. Cheating is Bad
+Updates the score of 'Bob' to 10 in the `second_table`.
+
+### 13. Score Too Low
+Removes all records with a score <= 5 in the `second_table`.
+
+### 14. Average
+Computes the average score of all records in the `second_table`.
+
+### 15. Number by Score
+Lists the number of records with the same score in the `second_table`.
+
+### 16. Say My Name
+Lists all records of the `second_table` with a name value, ordered by descending score.
+
+## Usage
+To run these scripts, use the following command:
+
+```bash
+cat script.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+## Author
+Sweety Castro
