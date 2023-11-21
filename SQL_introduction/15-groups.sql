@@ -3,5 +3,3 @@
 SELECT score, COUNT(*) AS number FROM second_table
 GROUP BY score
 ORDER BY number DESC, score DESC;
--- Exit from MySQL shell
-EXIT;
