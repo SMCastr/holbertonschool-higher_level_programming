@@ -1,9 +1,5 @@
 -- 16-shows_by_genre.sql
 -- Script to list all shows and genres linked to each show in the 'hbtn_0d_tvshows' database
-
--- Use the database 'hbtn_0d_tvshows'
-USE hbtn_0d_tvshows;
-
 -- Select shows and genres
 SELECT tv_shows.title, tv_genres.name
 FROM tv_shows
