@@ -3,7 +3,6 @@
 
 -- Use the database 'hbtn_0d_tvshows'
 USE hbtn_0d_tvshows;
-
 -- Select shows and their corresponding genre IDs from the 'tv_shows' and 'tv_show_genres' tables
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
