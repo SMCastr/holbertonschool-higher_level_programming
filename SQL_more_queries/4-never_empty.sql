@@ -1,5 +1,5 @@
 -- 4-never_empty.sql
--- Script to create the database 'hbtn_0d_usa' and the table 'states' in the database
+-- This script creates a table 'id_not_null' in the database
 
 CREATE TABLE IF NOT EXISTS id_not_null (
     id INT DEFAULT 1,
