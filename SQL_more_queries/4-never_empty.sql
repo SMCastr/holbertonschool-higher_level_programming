@@ -3,8 +3,5 @@
 
 CREATE TABLE IF NOT EXISTS id_not_null (
     id INT DEFAULT 1,
-    name VARCHAR(256),
+    name VARCHAR(256)
 );
-
--- Optional: Display the structure of the 'unique_id' table for verification
-DESCRIBE unique_id;
