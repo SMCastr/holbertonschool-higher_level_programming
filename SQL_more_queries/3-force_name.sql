@@ -1,5 +1,5 @@
 -- 3-force_name.sql
--- This table is used to store the names of the forces
+-- This script creates a table 'force_name' in the database
 
 CREATE TABLE IF NOT EXISTS force_name (
     id INT,
