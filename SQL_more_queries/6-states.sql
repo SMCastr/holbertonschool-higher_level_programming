@@ -12,12 +12,3 @@ CREATE TABLE IF NOT EXISTS states (
     id INT AUTO_INCREMENT UNIQUE NOT NULL PRIMARY KEY,
     name VARCHAR(256) NOT NULL
 );
-
--- Optional: Display the structure of the 'states' table for verification
-DESCRIBE states;
-
--- Optional: Insert sample data into the 'states' table
-INSERT INTO states (name) VALUES
-    ('California'),
-    ('Arizona'),
-    ('Texas');
