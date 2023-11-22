@@ -1,10 +1,10 @@
 -- 10-genre_id_by_show.sql
--- Script to list all shows from the 'hbtn_0d_tvshows' database that have at least one genre linked
+-- This script should list all shows and their genre IDs
 
 -- Use the database 'hbtn_0d_tvshows'
 USE hbtn_0d_tvshows;
 
--- Select shows and their corresponding genre IDs from the 'tv_shows' and 'tv_show_genres' tables
+-- Select shows and genres
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
 JOIN tv_show_genres ON tv_shows.id = tv_show_genres.tv_show_id
