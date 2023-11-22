@@ -1,5 +1,5 @@
 -- 10-genre_id_by_show.sql
--- Order by shows.title and genres.id
+-- This script creates a table 'tv_shows' in the database
 
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
