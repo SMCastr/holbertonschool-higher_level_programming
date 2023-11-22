@@ -1,8 +1,5 @@
 -- 14-my_genres.sql
--- Script to list all genres of the show Dexter from the 'hbtn_0d_tvshows' database
-
--- Use the database 'hbtn_0d_tvshows'
-USE hbtn_0d_tvshows;
+-- Script to list all genres of the show Dexter in the 'hbtn_0d_tvshows' database
 
 -- Select genres of the show Dexter
 SELECT tv_genres.name

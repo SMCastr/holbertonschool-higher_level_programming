@@ -1,9 +1,6 @@
 -- 15-comedy_only.sql
 -- Script to list all Comedy shows in the 'hbtn_0d_tvshows' database
 
--- Use the database 'hbtn_0d_tvshows'
-USE hbtn_0d_tvshows;
-
 -- Select Comedy shows
 SELECT tv_shows.title
 FROM tv_shows
