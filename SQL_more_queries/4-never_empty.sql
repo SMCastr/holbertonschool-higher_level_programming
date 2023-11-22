@@ -7,6 +7,3 @@ CREATE TABLE IF NOT EXISTS id_not_null (
     name VARCHAR(256),
     PRIMARY KEY (id)
 );
-
--- Optional: Display the structure of the 'id_not_null' table for verification
-DESCRIBE id_not_null;
