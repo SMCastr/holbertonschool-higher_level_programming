@@ -18,20 +18,21 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute SQL query to get cities of a specific state
-    query = ("SELECT cities.name FROM cities\
+    query = """SELECT cities.name FROM cities\
                 INNER JOIN states ON cities.state_id = states.id\
                 WHERE states.name = %s\
-                ORDER BY cities.id ASC")
+                ORDER BY cities.id ASC"""
 
     # Execute the query with state name as an argument
     cursor.execute(query, (sys.argv[4],))
 
     # Fetch the result
-    result = cursor.fetchone()
+    result = cursor.fetchall()
 
-    # Display the result
-    if result[0]:
-        print(result[0])
+    # Display the results
+    if results:
+        for result in results:
+            print(result[0])
     else:
         print("Not found")
 
