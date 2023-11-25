@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module deletes all State objects with a name containing
-the letter a from the database passed as an argument. 
+the letter a from the database passed as an argument.
 """
 
 
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states_to_delete = session.query(State).filter(State.name.like('%a%')).all()
+    states_to_delete = session.query(State).filter(State.name.like('%a%')):
     for state in states_to_delete:
         session.delete(state)
     session.commit()
