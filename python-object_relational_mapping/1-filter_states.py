@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""
-Script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa
-"""
+"""This module filters and prints the states
+starting with N from the database"""
+
 
 import MySQLdb
 import sys
+
 
 def connect_db(username, password, database):
     """
@@ -25,9 +26,11 @@ def connect_db(username, password, database):
 
     return conn
 
+
 def filter_states_starting_with_n(username, password, database):
     """
-    Retrieve and display all states with a name starting with N from the 'states' table
+    Retrieve and display all states with
+    a name starting with N from the 'states' table
     """
     # Connect to the database
     conn = connect_db(username, password, database)
@@ -45,6 +48,7 @@ def filter_states_starting_with_n(username, password, database):
     for row in query_rows:
         print(row)
 
+
     # Close the cursor and the database connection
     cur.close()
     conn.close()
@@ -52,7 +56,8 @@ def filter_states_starting_with_n(username, password, database):
 if __name__ == "__main__":
     # Check if the script is being run directly
     if len(sys.argv) != 4:
-        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        print("Usage: {} <username> <password> <database>".
+              format(sys.argv[0]))
         sys.exit(1)
 
     # Retrieve MySQL username, password, and database from command-line arguments
