@@ -1,63 +1,40 @@
 #!/usr/bin/python3
-"""This module filters and prints the states
-starting with n from the database"""
+"""THis module takes in an argument and displays
+all values in the states table of hbtn_0e_0_usa"""
 
 
 import MySQLdb
 import sys
 
 
-def connect_db(username, password, database):
-    """
-    Connect to the MySQL database
-    """
-    # Database connection parameters
-    db_config = {
-        'host': 'localhost',
-        'port': 3306,
-        'user': username,
-        'passwd': password,
-        'db': database,
-        'charset': 'utf8'
-    }
+if __name__ == "__main__":
+    """Function that takes in an argument and displays all values"""   
+    # Connecting to a MySQL database.
+    cnx = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        charset="utf8",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        database=sys.argv[3])
 
-    # Create a connection
-    conn = MySQLdb.connect(**db_config)
+    # Making cursor obj for execution.
+    cur = cnx.cursor()
 
-    return conn
+    # Executing query.
+    cur.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 
-
-def filter_states_starting_with_n(username, password, database):
-    """
-    Retrieve and display all states with
-    a name starting with n from the 'states' table
-    """
-    # Connect to the database
-    conn = connect_db(username, password, database)
-
-    # Create a cursor
-    cur = conn.cursor()
-
-    # Execute the SELECT query to get states starting with n, ordered by id
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-
-    # Fetch all rows
+    # Obtaining query results.
     query_rows = cur.fetchall()
 
-    # Print the results
+    # Printing results.
     for row in query_rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
-
-    # Close the cursor and the database connection
+    # Close cursor.
     cur.close()
-    conn.close()
 
-
-if __name__ == "__main__":
-
-
-    # Check if the script is being run directly
-    if len(sys.argv) != 4:
-        print("Usage: {} <username> <password> <database>".
-              format(sys.argv[0]))
+    # Close connection to database.
+    cnx.close()
