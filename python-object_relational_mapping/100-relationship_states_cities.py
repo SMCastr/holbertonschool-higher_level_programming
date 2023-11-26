@@ -1,13 +1,21 @@
 #!/usr/bin/python3
-"""Script that creates the State “California” with the City “San Francisco”"""
+"""
+Script that creates the State “California” with the City “San Francisco”
+"""
+
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 
+
 if __name__ == "__main__":
-    """Create California with San Francisco"""
+    """
+    Create California with San Francisco
+    """
+
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
@@ -36,6 +44,12 @@ if __name__ == "__main__":
     
     # Committing the session
     my_session.commit()
+
+    # Querying and printing all the records
+    states = my_session.query(State).all()
+    for state in states:
+        for city in state.cities:
+            print("{}: {}".format(state.id, city.name))
 
     # Closing session.
     my_session.close()
