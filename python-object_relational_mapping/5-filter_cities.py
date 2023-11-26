@@ -1,46 +1,46 @@
 #!/usr/bin/python3
 """
-Module to take in the name of a state as an argument and lists
-all cities of that state, using the database hbtn_0e_4_usa.
+Script that lists all cities from the database hbtn_0e_4_usa.
 """
-
 
 import MySQLdb
 import sys
 
 
 if __name__ == "__main__":
+    # Check if the correct number of arguments is provided
+    if len(sys.argv) != 5:
+        print("Usage: {} <username> <password> <database> <state>".format(sys.argv[0]))
+        sys.exit(1)
+
+    # Connect to MySQL server running on localhost at port 3306
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+
+    # Create a cursor object to interact with the database
+    cursor = db.cursor()
+
+    # Execute SQL query to get cities of a specific state
+    query = """
+        SELECT cities.name
+        FROM cities
+        INNER JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
+        ORDER BY cities.id ASC
     """
-    Function that takes in the name of a state as an argument and lists
-    all cities of that state, using the database hbtn_0e_4_usa.
-    """
 
-    # Connecting to a MySQL database.
-    cnx = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        charset="utf8",
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        database=sys.argv[3])
+    # Execute the query with state name as an argument
+    cursor.execute(query, (sys.argv[4],))
 
-    # Making cursor obj for execution.
-    cur = cnx.cursor()
+    # Fetch the result
+    result = cursor.fetchall()
 
-    # Executing query.
-    cur.execute("SELECT cities.name FROM cities\
-                INNER JOIN states ON cities.state_id = states.id\
-                WHERE states.name = %s\
-                ORDER BY cities.id ASC", (sys.argv[4],))
+    # Display the results
+    if result:
+        print(", ".join([row[0] for row in result]))
+    else:
+        print("Not found")
 
-    # Obtaining query results.
-    query_rows = cur.fetchall()
-
-    # Printing results.
-    print(", ".join([row[0] for row in query_rows]))
-
-    # Close cursor.
-    cur.close()
-
-    # Close connection to database.
-    cnx.close()
+    # Close cursor and database connection
+    cursor.close()
+    db.close()
