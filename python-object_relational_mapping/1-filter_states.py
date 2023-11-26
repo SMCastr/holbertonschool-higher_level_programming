@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 """
-Script que lista todos los estados de la base de datos hbtn_0e_0_usa
+Script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa
 """
-
 
 import MySQLdb
 import sys
 
 def connect_db(username, password, database):
     """
-    Conectar a la base de datos MySQL
+    Connect to the MySQL database
     """
-    # Parámetros de conexión a la base de datos
+    # Database connection parameters
     db_config = {
         'host': 'localhost',
         'port': 3306,
@@ -21,43 +20,43 @@ def connect_db(username, password, database):
         'charset': 'utf8'
     }
 
-    # Crear una conexión
+    # Create a connection
     conn = MySQLdb.connect(**db_config)
 
     return conn
 
-def get_states(username, password, database):
+def filter_states_starting_with_n(username, password, database):
     """
-    Recuperar y mostrar todos los estados de la tabla 'states'
+    Retrieve and display all states with a name starting with N from the 'states' table
     """
-    # Conectar a la base de datos
+    # Connect to the database
     conn = connect_db(username, password, database)
 
-    # Crear un cursor
+    # Create a cursor
     cur = conn.cursor()
 
-    # Ejecutar la consulta SELECT para obtener todos los estados, ordenados por id
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    # Execute the SELECT query to get states starting with N, ordered by id
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
-    # Obtener todas las filas
+    # Fetch all rows
     query_rows = cur.fetchall()
 
-    # Imprimir los resultados
+    # Print the results
     for row in query_rows:
         print(row)
 
-    # Cerrar el cursor y la conexión a la base de datos
+    # Close the cursor and the database connection
     cur.close()
     conn.close()
 
 if __name__ == "__main__":
-    # Verificar si el script se está ejecutando directamente
+    # Check if the script is being run directly
     if len(sys.argv) != 4:
-        print("Uso: {} <nombre de usuario> <contraseña> <base de datos>".format(sys.argv[0]))
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
 
-    # Obtener el nombre de usuario, la contraseña y la base de datos de MySQL de los argumentos de la línea de comandos
+    # Retrieve MySQL username, password, and database from command-line arguments
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    # Llamar a la función para obtener y mostrar los estados
-    get_states(username, password, database)
+    # Call the function to filter and print states starting with N
+    filter_states_starting_with_n(username, password, database)
