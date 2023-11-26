@@ -8,7 +8,7 @@ import sys
 
 
 if __name__ == "__main__":
-    """Function that takes in an argument and displays all values"""   
+    """Function that takes in an argument and displays all values"""
     # Connecting to a MySQL database.
     cnx = MySQLdb.connect(
         host="localhost",
