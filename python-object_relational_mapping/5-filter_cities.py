@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 5:
         print("Usage: {} <username> <password> <database> <state>".format(sys.argv[0]))
-
+        sys.exit(1)
 
     # Connect to a MySQL database based on command line arguments
     try:
@@ -57,3 +57,6 @@ if __name__ == "__main__":
     # Close cursor and database connection
     cursor.close()
     db.close()
+# Check if the result is empty
+if not result:
+    print("No cities found for the state:", sys.argv[4])
