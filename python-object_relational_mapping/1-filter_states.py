@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module filters and prints the states
-starting with N from the database"""
+starting with n from the database"""
 
 
 import MySQLdb
@@ -30,7 +30,7 @@ def connect_db(username, password, database):
 def filter_states_starting_with_n(username, password, database):
     """
     Retrieve and display all states with
-    a name starting with N from the 'states' table
+    a name starting with n from the 'states' table
     """
     # Connect to the database
     conn = connect_db(username, password, database)
@@ -38,7 +38,7 @@ def filter_states_starting_with_n(username, password, database):
     # Create a cursor
     cur = conn.cursor()
 
-    # Execute the SELECT query to get states starting with N, ordered by id
+    # Execute the SELECT query to get states starting with n, ordered by id
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all rows
@@ -54,14 +54,15 @@ def filter_states_starting_with_n(username, password, database):
     conn.close()
 
 if __name__ == "__main__":
+ 
+ 
     # Check if the script is being run directly
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".
               format(sys.argv[0]))
-        sys.exit(1)
 
     # Retrieve MySQL username, password, and database from command-line arguments
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    # Call the function to filter and print states starting with N
+    # Call the function to filter and print states starting with n
     filter_states_starting_with_n(username, password, database)
