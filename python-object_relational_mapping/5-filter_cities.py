@@ -30,9 +30,8 @@ if __name__ == "__main__":
     result = cursor.fetchall()
 
     # Display the results
-    if results:
-        for result in results:
-            print(result[0])
+    if result:
+        print(", ".join([row[0] for row in result]))
     else:
         print("Not found")
 
