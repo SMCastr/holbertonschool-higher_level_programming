@@ -6,7 +6,6 @@ Script that lists all cities from the database hbtn_0e_4_usa.
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 5:
@@ -22,7 +21,7 @@ if __name__ == "__main__":
 
     # Execute SQL query to get cities of a specific state
     query = """
-        SELECT cities.name
+        SELECT cities.id, cities.name, states.name
         FROM cities
         INNER JOIN states ON cities.state_id = states.id
         WHERE states.name = %s
@@ -37,7 +36,7 @@ if __name__ == "__main__":
 
     # Display the results
     if result:
-        print(", ".join([row[0] for row in result]))
+        print(", ".join([row[1] for row in result]))
     else:
         print("Not found")
 
