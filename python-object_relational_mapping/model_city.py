@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Start link class to table in database 
-"""
+"""This module defines a City class
+and an instance Base = declarative_base():"""
 
 
 from sqlalchemy import Column, Integer, String, ForeignKey
@@ -9,6 +9,7 @@ from model_state import Base, State
 
 
 Base = declarative_base()
+
 
 class City(Base):
     """ City class """
