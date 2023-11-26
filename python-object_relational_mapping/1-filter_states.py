@@ -53,16 +53,16 @@ def filter_states_starting_with_n(username, password, database):
     cur.close()
     conn.close()
 
+
 if __name__ == "__main__":
- 
- 
+
+
     # Check if the script is being run directly
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".
               format(sys.argv[0]))
 
-    # Retrieve MySQL username, password, and database from command-line arguments
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-
-    # Call the function to filter and print states starting with n
-    filter_states_starting_with_n(username, password, database)
+    # Get the command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
