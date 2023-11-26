@@ -16,7 +16,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Create an SQLAlchemy Engine
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database),
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
+                           format(username, password, database),
                            pool_pre_ping=True)
 
     # Create an SQLAlchemy ORM session
