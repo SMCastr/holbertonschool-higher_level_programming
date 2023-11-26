@@ -3,8 +3,10 @@
 Script that lists all cities from the database hbtn_0e_4_usa.
 """
 
+
 import MySQLdb
 import sys
+
 
 def print_cities(cities):
     """
@@ -12,13 +14,14 @@ def print_cities(cities):
     """
     print(", ".join(city[1] for city in cities))
 
+
 if __name__ == "__main__":
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 5:
         print("Usage: {} <username> <password> <database> <state>".format(sys.argv[0]))
-        sys.exit(1)
 
-    # Connect to MySQL server running on localhost at port 3306
+
+    # Connect to a MySQL database based on command line arguments
     try:
         db = MySQLdb.connect(host="localhost", port=3306,
                              user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
